@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { MovieListComponent } from './movie-list/movie-list.component';
 import { MovieSaveComponent } from './movie-save/movie-save.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { MovieSaveComponent } from './movie-save/movie-save.component';
     MovieSaveComponent
   ],
   imports: [
-    BrowserModule
+    FormsModule,
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

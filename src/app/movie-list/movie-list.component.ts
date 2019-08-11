@@ -7,16 +7,24 @@ import { MovieService} from '../service/movie.service';
   styleUrls: ['./movie-list.component.css']
 })
 export class MovieListComponent implements OnInit {
-  // Permet de pouvoir utiliser le service Movie
+  filter = '';
+  moviesList = [];
+
   constructor(
     private movies: MovieService,
-  ) {}
+  ) {
+  }
 
   ngOnInit() {
   }
-// Vous devez écrire la fonction qui va vous permettre de demander au service de récupérer les film
-//  Pour cela il vous faut récupérer les infos dans le champ Input du Html
-//  et pouvoir ensuite les afficher en retour.
-// Good luck ;)
 
+  search(filter) {
+    this.movies.search(filter)
+      .subscribe(
+        (response) => {
+          console.log(response);
+          this.moviesList = response['results'];
+        }
+      );
+  }
 }

@@ -1,21 +1,26 @@
 <div class="md-form active-pink active-pink-2 mb-3 mt-0">
-  <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+  <input [(ngModel)]="filter"
+         (keyup.enter)="search(filter)"
+         class="form-control"
+         type="text"
+         placeholder="Search"
+         aria-label="Search">
 </div>
 
 <!--Ceci est le code Html qui doit contenir les informations des films-->
 
-<!--<div class="card">-->
-  <!--<div class="row ">-->
-    <!--<div class="col-md-4">-->
-      <!--<img src="https://placeholdit.imgix.net/~text?txtsize=38&txt=400%C3%97400&w=400&h=400" class="w-100">-->
-    <!--</div>-->
-    <!--<div class="col-md-8 px-3">-->
-      <!--<div class="card-block px-3">-->
-        <!--<h4 class="card-title"></h4>-->
-        <!--<p class="card-text"></p>-->
-        <!--<p class="card-text"></p>-->
-        <!--<a href="#" class="btn btn-primary"></a>-->
-      <!--</div>-->
-    <!--</div>-->
-  <!--</div>-->
-<!--</div>-->
+<div class="card" *ngFor="let movie of moviesList">
+  <div class="row ">
+    <div class="col-md-4">
+      <img src="https://image.tmdb.org/t/p/w154/{{movie.poster_path}}" class="w-40">
+    </div>
+    <div class="col-md-8 px-3">
+      <div class="card-block px-3">
+        <h4 class="card-title">{{movie.original_title}}</h4>
+        <p class="card-text">{{movie.overview}}</p>
+        <p class="card-text">{{movie.release_date}}</p>
+        <a href="#" class="btn btn-primary">Ajouter en favoris</a>
+      </div>
+    </div>
+  </div>
+</div>

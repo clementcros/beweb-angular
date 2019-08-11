@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders  } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 
 @Injectable({
@@ -13,9 +13,9 @@ export class MovieService {
     private http: HttpClient,
   ) { }
 
-// compléter la fonction pour récupérer la listes des films
-  search(){
-
+  search(query) {
+    query = this.convertToSlug(query);
+    return this.http.get(this.apiUrl + '3/search/movie' + this.apiKey + '&query=' + query );
   }
 
 
