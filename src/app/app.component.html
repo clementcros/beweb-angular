@@ -1,12 +1,14 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<app-nav></app-nav>
+<app-nav  [(counter)]="counter"></app-nav>
 <div class="container-fluid">
   <div class="row">
     <div class="col-3">
-      <app-movie-save></app-movie-save>
+      <app-movie-save [(favorite)]="favorite"></app-movie-save>
     </div>
     <div class="col-9">
-      <app-movie-list></app-movie-list>
+      <app-movie-list
+        [(counter)]="counter"
+        [(favorite)]="favorite"></app-movie-list>
     </div>
   </div>
 </div>

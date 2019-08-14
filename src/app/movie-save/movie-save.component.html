@@ -1,9 +1,9 @@
 <!--Code Html qui contient les film sauvegardé-->
-
-<div class="card margin" style="width: 20rem;">
-  <img class="card-img-top" src="..." alt="Card image cap">
+<div class="card margin" style="width: 18rem;"  *ngFor="let favorites of favorite">
+  <img class="card-img-top image" src="https://image.tmdb.org/t/p/w154/{{favorites.image}}" alt="Card image cap">
   <div class="card-body">
-    <h5 class="card-title"></h5>
-    <p class="card-text"></p>
+    <h5 class="card-title">{{favorites.title}}</h5>
+    <p class="card-text">{{favorites.resume}}</p>
   </div>
 </div>
+

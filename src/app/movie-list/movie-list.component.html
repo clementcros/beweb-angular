@@ -19,7 +19,7 @@
         <h4 class="card-title">{{movie.original_title}}</h4>
         <p class="card-text">{{movie.overview}}</p>
         <p class="card-text">{{movie.release_date}}</p>
-        <a href="#" class="btn btn-primary">Ajouter en favoris</a>
+        <a href="#" class="btn btn-primary" (click)="addNewFavorite(movie.poster_path, movie.original_title, movie.overview)">Ajouter en favoris</a>
       </div>
     </div>
   </div>

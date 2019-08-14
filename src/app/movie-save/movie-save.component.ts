@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 @Component({
   selector: 'app-movie-save',
   templateUrl: './movie-save.component.html',
@@ -8,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 export class MovieSaveComponent implements OnInit {
 
   constructor() { }
-
+  @Input() favorite: any;
+  // @ts-ignore
   ngOnInit() {
   }
 
